@@ -1,2 +1,5 @@
-package zadanieSlajd38;public interface SumOfNumbers {
+package zadanieSlajd38;
+
+public interface SumOfNumbers {
+    int getSumOfNumbers();
 }

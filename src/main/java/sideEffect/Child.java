@@ -1,3 +1,5 @@
+package sideEffect;
+
 public class Child {
 
     private String name;
@@ -22,7 +24,7 @@ public class Child {
 
     @Override
     public String toString() {
-        return "Child{" +
+        return "sideEffect.Child{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
