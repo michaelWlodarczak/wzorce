@@ -12,7 +12,7 @@ package account;
 //     ?? void should_transfer_money_between_accounts() -done
 //   ->?? void should_not_transfer_money_between_accounts_if_exceeding_maximum_debit_of_1000() -done
 //        void should_not_transfer_money_between_accounts_if_amount_is_negative() -done
-//        void should_return_null_name_for_new_account()
+//        void should_return_null_name_for_new_account() -done
 //        void should_return_name_of_account()
 //        void should_contains_account_balance()
 
@@ -145,13 +145,29 @@ public class AccountTest {
         //When
         Assertions.assertEquals(expectedBalance, account1.getBalance());
     }
-//todo
+
     @Test
     void should_return_null_name_for_new_account(){
         //Given
-        account1.getName();
+        account1.setName(null);
         //When
-        Assertions.assertEquals("",account1.getName());
+        String expectedName = null; //String expectedName = "Konto Premium";
+        //Then
+        Assertions.assertEquals(expectedName,account1.getName());
+    }
+    //TODO
+    @Test
+    void should_return_name_of_account(){
+        //Given
+        account1.setName("Konto premium");
+        //When
+        String expectedName = "Konto Premium";
+        //String expectedName = null;
+        //Then
+        Assertions.assertEquals(expectedName,account1.getName());
+    }
+    //TODO
+    void should_contains_account_balance(){
 
     }
 }

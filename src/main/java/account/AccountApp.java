@@ -4,7 +4,7 @@ public class AccountApp {
     public static void main(String[] args) {
         Account account1 = new Account();
         Account account2 = new Account();
-        account1.setName("");
+        account1.setName(null);
         account2.setName("Konto Oszczednosciowe");
 
         System.out.println("Nazwa " + account1.getName());
