@@ -1,4 +1,4 @@
-package docorator;
+package docoratorCar;
 
 public class Car implements ICar{
     @Override

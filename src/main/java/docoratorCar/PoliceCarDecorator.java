@@ -1,4 +1,4 @@
-package docorator;
+package docoratorCar;
 
 public class PoliceCarDecorator extends BasciCarDecorator{
     public PoliceCarDecorator(ICar basicCar) {

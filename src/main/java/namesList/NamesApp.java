@@ -19,9 +19,5 @@ public class NamesApp {
         nameList.namesToLowerCase();
         System.out.println(nameList);
 
-
-
-
-
     }
 }

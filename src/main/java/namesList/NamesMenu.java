@@ -1,7 +1,7 @@
 package namesList;
 
 import java.util.Scanner;
-
+//TODO dokonczyc, bo jest k*rwa lipa ;(
 public class NamesMenu {
     public static void main(String[] args) {
         ChildrenRepository childrenNames = new Names();
@@ -22,8 +22,11 @@ public class NamesMenu {
                     childrenNames.addToList(input.nextLine());
                     break;
                 case "b":
-                    System.out.println("Wyswietl liste dzieci");
+                    System.out.println("Wyswietl liste dzieci: ");
                     childrenNames.getChildren();
+                case "c":
+                    System.out.println("Posortuj liste dzieci: ");
+                    childrenNames.sortChildren();
                 case "e":
                     System.out.println("EXIT");
                     System.exit(-1);

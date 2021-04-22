@@ -1,4 +1,4 @@
-package pizzaDecorator;
+package decoratorPizza;
 
 public class SalamiPizzaDecorator extends BasicPizzaDecorator {
     public int salamiPrice = 15;

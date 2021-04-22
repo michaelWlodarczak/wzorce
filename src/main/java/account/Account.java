@@ -18,6 +18,10 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(int balance) {  //setBalance stworzylem na potrzeby @Test  void should_return_balance_minus_withdraw()
+        this.balance = balance;
+    }
+
     public void setMaxDebit(int maxDebit) {
         this.maxDebit = maxDebit;
     }

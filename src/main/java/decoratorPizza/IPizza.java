@@ -1,4 +1,4 @@
-package pizzaDecorator;
+package decoratorPizza;
 
 public interface IPizza {
 

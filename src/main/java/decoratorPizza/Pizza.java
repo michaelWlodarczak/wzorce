@@ -1,4 +1,4 @@
-package pizzaDecorator;
+package decoratorPizza;
 
 public class Pizza implements IPizza{
 
