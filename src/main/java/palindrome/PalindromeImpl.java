@@ -20,10 +20,10 @@ public class PalindromeImpl implements Palindrome {
         String clean = text.replaceAll("\\s+", "").toLowerCase(); // "\\s+" usuwa biale znaki
         int lenght = clean.length();
         int forward = 0;
-        int backward = lenght - 1;
+        int backward = lenght-1;
         while (forward < backward) {
-            char charForward = clean.charAt(forward++);
-            char charBackward = clean.charAt(backward--);
+            char charForward = clean.charAt(forward++);     // Metoda charAt zwraca znak znajdujący się pod wskazanym indeksem.
+            char charBackward = clean.charAt(backward--);  // W przypadku przekroczenia zakresu indeksu wyrzuci wyjątek: StringIndexOutOfBoundsException.
             if (charForward != charBackward)
                 return false;
         }
