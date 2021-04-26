@@ -16,26 +16,41 @@ package account;
 //        void should_return_name_of_account()
 //        void should_contains_account_balance()
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assertions.*;
 //import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 public class AccountTest {
+    Account account1;
+
+//    @Test
+//    void getName(){
+//     //arrange
+//        final Account account = new Account();
+//        //act
+//        account.setName("premium");
+//        //assert
+//        assertEquals("premium",account.getName());
+//    }
+
     @BeforeEach
     void beforeEachMethod() {
+        account1 = new Account();
     }
-    Account account1 = new Account();
-
 
     @Test
     void should_return_zero_balance_for_new_account() {
         //Given
         account1.getBalance();
         //When
-        int expectedBalance = 0;
+        int expectedBalance = 1;
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance(),"expected balance " + expectedBalance);
     }
 
     @Test
@@ -45,18 +60,18 @@ public class AccountTest {
         //When
         int expectedBalance = 100;  // int expectedBalance = 150; test nie przechodzi
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
     }
 
     @Test
     void should_return_balance_minus_withdraw(){
         //Given
-        account1.setBalance(10);  //na potrzeby tego testu w klasie Account stworzylem setBalance
+   //     account1.setBalance(10);  //na potrzeby tego testu w klasie Account stworzylem setBalance
         account1.withdraw(10);
         //When
-        int expectedBalance = 0;
+        int expectedBalance = -10;
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
     }
 
     @Test
@@ -68,7 +83,7 @@ public class AccountTest {
         //When
         int expectedBalance = -1000;  //int expectedBalance = 0;  test nie przechodzi
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
 
     }
 
@@ -84,7 +99,7 @@ public class AccountTest {
         account1.transfer(account2,amountOfTransfer);
         int expectedBalance = 0; // int expectedBalance = -2000; test nie przejdzie
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
     }
 
     @Test
@@ -94,7 +109,7 @@ public class AccountTest {
         //When
         int expectedBalance = 0; // int expectedBalance = -100; test nie przejdzie
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
     }
 
     @Test
@@ -104,7 +119,7 @@ public class AccountTest {
         //When
         int expectedBalance = 0; //int expectedBalance = -100; test nie przejdzie
         //Then
-        Assertions.assertEquals(expectedBalance,account1.getBalance());
+        assertEquals(expectedBalance,account1.getBalance());
     }
 
     @Test
@@ -116,7 +131,7 @@ public class AccountTest {
         int expectedBalance1 = -100;
         //int expectedBalance2 = 100;
         //Then
-        Assertions.assertEquals(expectedBalance1,account1.getBalance());
+        assertEquals(expectedBalance1,account1.getBalance());
         //Assertions.assertEquals(expectedBalance2,account2.getBalance());
     }
 
@@ -124,15 +139,16 @@ public class AccountTest {
     void should_not_transfer_money_between_accounts_if_exceeding_maximum_debit_of_1000(){
         //Given
         Account account2 = new Account();
-        account1.setBalance(0);
-        account1.setMaxDebit(-1000);
-        account2.setBalance(0);
+        //account1.setBalance(0);
+       // account1.setMaxDebit(-1000); nie trzeba tego pisac
+        //account2.setBalance(0);
         //When
         int amountOfTransfer = 2000;
         account1.transfer(account2,amountOfTransfer);
         int expectedBalance = 0; // int expectedBalance = -2000; test nie przejdzie
         //Then
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance,account2.getBalance());
     }
 
     @Test
@@ -143,7 +159,7 @@ public class AccountTest {
         //Then
         int expectedBalance = 0; //int expectedBalance = -100; test nie przejdzie
         //When
-        Assertions.assertEquals(expectedBalance, account1.getBalance());
+        assertEquals(expectedBalance, account1.getBalance());
     }
 
     @Test
@@ -153,7 +169,7 @@ public class AccountTest {
         //When
         String expectedName = null; //String expectedName = "Konto Premium";
         //Then
-        Assertions.assertEquals(expectedName,account1.getName());
+        assertEquals(expectedName,account1.getName());
     }
     //TODO
     @Test
@@ -164,7 +180,7 @@ public class AccountTest {
         String expectedName = "Konto Premium";
         //String expectedName = null;
         //Then
-        Assertions.assertEquals(expectedName,account1.getName());
+        assertEquals(expectedName,account1.getName());
     }
     //TODO
     void should_contains_account_balance(){
