@@ -18,6 +18,7 @@ public class Demo {
         Product waterCopy = new Product("Cisowianka", "123",20);
         products.remove(waterCopy);
         System.out.println(waterCopy);
+        System.out.println(products);
 
     }
 }

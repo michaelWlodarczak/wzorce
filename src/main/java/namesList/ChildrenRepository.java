@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.List;
 
 public interface ChildrenRepository {
+
     boolean addToList(String name);
 
     List<String> getChildren();

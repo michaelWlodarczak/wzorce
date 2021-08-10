@@ -20,10 +20,10 @@ public class Names implements ChildrenRepository {
     @Override
     public void sortChildren() {
         //int compare(T o1, T o2);
-        Comparator<String> comparator = (string1, string2) -> string2.compareTo(string1);
-        names.sort(comparator);
+        //Comparator<String> comparator = (string1, string2) -> string2.compareTo(string1);
+        //names.sort(comparator);
         //Integer.compareTo(string1.length().compareTo(string2.length));
-        // Collections.sort(names);
+         Collections.sort(names);
         //   names = names.stream().sorted().collect(Collectors.toList());
     }
 
@@ -35,6 +35,7 @@ public class Names implements ChildrenRepository {
 
         //rozwiazanie2
         //names = names.stream().distinct().collect(Collectors.toList());
+
         //rozwiazanie1
         List<String> tempList = new ArrayList<>();
         for (int i = 0; i < names.size(); i++) {
@@ -66,8 +67,6 @@ public class Names implements ChildrenRepository {
 
     @Override
     public String toString() {
-        return "Names{" +
-                "names=" + names +
-                '}';
+        return "Names = " + names;
     }
 }
